@@ -4,12 +4,9 @@
   "description": "This repo just to do some Authentication",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "watch": "nodemon index.js",
-    "init:config": "sequelize init:config",
-    "db:create": "sequelize db:create",
-    "test-watch": "NODE_ENV=test jest --watchAll",
-    "test": "NODE_ENV=test jest"
+    "test": "NODE_ENV=test jest --coverage --verbose",
+    "dev": "NODE_ENV=development nodemon index.js",
+    "start": "NODE_ENV=production node index.js"
   },
   "jest": {
     "testEnvironment": "node"

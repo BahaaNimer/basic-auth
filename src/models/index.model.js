@@ -7,14 +7,16 @@ const { Sequelize, DataTypes } = require('sequelize');
 const users = require('./signUp.model');
 
 let sequelizeOptions =
-  process.env.NODE_ENV === 'production' ? {
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false
+  process.env.NODE_ENV === "production"
+    ?
+    {
+      dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false,
+        },
       },
-    },
-  } : {};
+    } : {};
 
 let sequelize = new Sequelize(POSTGRES_URI, sequelizeOptions);
 
